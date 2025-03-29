@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チ。ジェネレーター</title>
+</head>
+
+<body>
+    <div id="capture" width="500" height="500">
+        <h1 id="bigText">チ</h1>
+        <img id="maru" src="./Vector.svg" alt="SVG画像">
+        <h3 id="miniText">ー地球の運動についてー</h3>
+    </div>
+    <input id="bigTextInput" type="text" placeholder="チ" maxlength="1" value="チ">
+    <input id="miniTextInput" type="text" placeholder="ー地球の運動についてー" value="ー地球の運動についてー">
+</body>
+<script>
+    const bigText = document.getElementById('bigText');
+    const miniText = document.getElementById('miniText');
+    const bigTextInput = document.getElementById('bigTextInput');
+    const miniTextInput = document.getElementById('miniTextInput');
+    bigTextInput.addEventListener('input', e => {
+        bigText.textContent = e.target.value;
+    });
+    miniTextInput.addEventListener('input', e => {
+        miniText.textContent = e.target.value;
+    });
+</script>
+<style>
+    body {
+        font-family: '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho Pro', serif;
+        text-align: center;
+
+    }
+
+    #bigText {
+        pointer-events: none;
+        width: 100%;
+        position: absolute;
+        font-size: 25em;
+        margin: 0;
+        top: -0.21em;
+        transform: scaleY(0.9);
+    }
+
+    #maru {
+        margin-top: 237px;
+        margin-left: 33px;
+        width: 298px;
+    }
+
+    #miniText {
+        margin: 5px;
+        font-size: 1.3em;
+        letter-spacing: 0.4em;
+    }
+
+    input {
+        z-index: 100;
+    }
+</style>
+
+</html>
